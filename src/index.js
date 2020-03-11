@@ -38,7 +38,7 @@ const AppSelect = ({
     onChange(item[valueKey]);
     setOptionSelected(item[valueKey]);
 
-    if (theme === 'selectBox') {
+    if (theme === 'dropdown') {
       setShowOptionsBox(false);
     }
   };
@@ -115,7 +115,7 @@ const AppSelect = ({
 
 AppSelect.propTypes = {
   items: PropTypes.instanceOf(Array),
-  theme: PropTypes.oneOf(['simple', 'selectBox']),
+  theme: PropTypes.oneOf(['simple', 'dropdown']),
   valueKey: PropTypes.string,
   labelKey: PropTypes.string,
   placeholder: PropTypes.string,
