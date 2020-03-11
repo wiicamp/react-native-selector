@@ -1,4 +1,4 @@
-# react-native-select
+# react-native-easy-select
 
 A flexible select component for React Native.
 
@@ -18,16 +18,16 @@ A flexible select component for React Native.
 
 ## Install
 ```sh
-yarn add react-native-select
+yarn add react-native-easy-select
 ```
 or
 ```sh
-npm i --save react-native-select
+npm i --save react-native-easy-select
 ```
 
 ## Usage
 ```javascript
-import Selector from 'react-native-select'; // Import package
+import Selector from 'react-native-easy-select'; // Import package
 
 const Example = () => (
   <Selector
@@ -85,12 +85,12 @@ export default Example;
 Contribution are always **welcome and recommended**! Here is how:
 
 - Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- Clone to your machine ```git clone https://github.com/YOUR_USERNAME/react-native-select.git```
+- Clone to your machine ```git clone https://github.com/YOUR_USERNAME/react-native-easy-select.git```
 - Make your changes
 - Create a pull request
 
 
 ## License
-`react-native-select` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
+`react-native-easy-select` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
   
 Any question or support will welcome.
