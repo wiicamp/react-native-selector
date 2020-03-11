@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/havinhthai/react-native-select.git"
+    "url": "git+https://github.com/havinhthai/react-native-easy-select.git"
   },
   "keywords": [
     "select",
@@ -21,9 +21,9 @@
   "author": "TuiDev <vinhthai997@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/havinhthai/react-native-select/issues"
+    "url": "https://github.com/havinhthai/react-native-easy-select/issues"
   },
-  "homepage": "https://github.com/havinhthai/react-native-select#readme",
+  "homepage": "https://github.com/havinhthai/react-native-easy-select#readme",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
