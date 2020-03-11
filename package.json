@@ -1,6 +1,6 @@
 {
   "name": "react-native-easy-select",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A flexible select component for React Native.",
   "main": "src/index.js",
   "scripts": {
