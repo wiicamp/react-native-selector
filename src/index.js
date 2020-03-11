@@ -72,9 +72,7 @@ const AppSelect = ({
     );
   });
 
-  if (theme === 'simple') {
-    comp = optionsList;
-  } else {
+  if (theme === 'dropdown') {
     comp = (
       <>
         <TouchableWithoutFeedback onPress={onToggleOptionsBox}>
@@ -104,6 +102,8 @@ const AppSelect = ({
         }
       </>
     );
+  } else {
+    comp = optionsList;
   }
 
   return (

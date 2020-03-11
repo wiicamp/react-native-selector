@@ -69,7 +69,7 @@ export default Example;
 | `onChange`                     | Function           | `(value) => {}`         | **Required**. Callback when the change the value button is pressed.  |
 | `valueKey`                     | String              | `'value'`         | Key name to specify value props of object  |
 | `labelKey`                     | String              | `'label'`         | Key name to specify label props of object  |
-| `theme`                     | String  = 'simple' or 'dropdown'            | `'simple'`         |  **Required**. Specify the UI for select components. Default is `simple` and dropdown UI is `selectBox`.  |
+| `theme`                     | String  = 'simple' or 'dropdown'            | `'simple'`         |  **Required**. Specify the UI for select components. Default is `simple` and dropdown UI is `dropdown`.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
 | `iconDropdownComponent`                     | Function           | `null`         | Custom icon component to be rendered.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
