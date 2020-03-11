@@ -2,7 +2,7 @@
 
 A flexible select component for React Native.
 
-![Demo](https://github.com/havinhthai/react-native-easy-select/blob/master/src/images/demo.gif)
+![Demo](https://s3-ap-southeast-1.amazonaws.com/cdn.tuidev.io/react-native-easy-select.gif)
 
 ## Table of Contents
 - [Features](#features)
