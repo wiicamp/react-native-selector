@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -29,6 +29,10 @@ const AppSelect = ({
 }) => {
   const [optionSelected, setOptionSelected] = useState(defaultValue);
   const [showOptionsBox, setShowOptionsBox] = useState(false);
+
+  useEffect(() => {
+    setOptionSelected(defaultValue);
+  }, [defaultValue]);
 
   const objSelected = items.find((item) => (
     item[valueKey].toString() === optionSelected.toString()
