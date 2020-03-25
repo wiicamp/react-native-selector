@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   TouchableWithoutFeedback,
+  ActivityIndicator,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -16,6 +17,7 @@ const AppSelect = ({
   theme,
   placeholder,
   defaultValue,
+  loading,
   valueKey,
   labelKey,
   containerStyle,
@@ -23,6 +25,7 @@ const AppSelect = ({
   placeholderContainerStyle,
   placeholderStyle,
   textOptionStyle,
+  loadingStyle,
   iconStyle,
   iconDropdownComponent,
   onChange,
@@ -55,27 +58,33 @@ const AppSelect = ({
 
   const IconDropdownComponent = (() => iconDropdownComponent)();
 
-  const optionsList = items.map((item) => {
-    const isSelected = item[valueKey]
-      && (item[valueKey].toString() === optionSelected.toString());
+  const optionsList = loading
+    ? (
+      <ActivityIndicator style={loadingStyle} />
+    )
+    : (
+      items.map((item) => {
+        const isSelected = item[valueKey]
+          && (item[valueKey].toString() === optionSelected.toString());
 
-    return (
-      <TouchableWithoutFeedback onPress={onSelectOption(item)} key={item[valueKey]}>
-        <View style={[styles.option, optionContainerStyle]}>
-          <View
-            style={[
-              styles.roundCheckbox,
-              isSelected && styles.roundCheckboxActive,
-            ]}
-          >
-            {isSelected && <View style={styles.roundCheckboxCore} />}
-          </View>
+        return (
+          <TouchableWithoutFeedback onPress={onSelectOption(item)} key={item[valueKey]}>
+            <View style={[styles.option, optionContainerStyle]}>
+              <View
+                style={[
+                  styles.roundCheckbox,
+                  isSelected && styles.roundCheckboxActive,
+                ]}
+              >
+                {isSelected && <View style={styles.roundCheckboxCore} />}
+              </View>
 
-          <Text style={[styles.txtOption, textOptionStyle]}>{item[labelKey]}</Text>
-        </View>
-      </TouchableWithoutFeedback>
+              <Text style={[styles.txtOption, textOptionStyle]}>{item[labelKey]}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        );
+      })
     );
-  });
 
   if (theme === 'dropdown') {
     comp = (
@@ -128,11 +137,13 @@ AppSelect.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  loading: PropTypes.bool,
   containerStyle: PropTypes.instanceOf(Object),
   optionContainerStyle: PropTypes.instanceOf(Object),
   placeholderContainerStyle: PropTypes.instanceOf(Object),
   placeholderStyle: PropTypes.instanceOf(Object),
   textOptionStyle: PropTypes.instanceOf(Object),
+  loadingStyle: PropTypes.instanceOf(Object),
   iconStyle: PropTypes.instanceOf(Object),
   iconDropdownComponent: PropTypes.func,
   onChange: PropTypes.func,
@@ -144,13 +155,15 @@ AppSelect.defaultProps = {
   valueKey: 'value',
   labelKey: 'label',
   placeholder: '',
+  defaultValue: '',
+  loading: false,
   containerStyle: null,
   optionContainerStyle: null,
   placeholderContainerStyle: null,
   placeholderStyle: null,
   textOptionStyle: null,
+  loadingStyle: null,
   iconStyle: null,
-  defaultValue: '',
   iconDropdownComponent: null,
   onChange: () => { },
 };

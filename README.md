@@ -36,17 +36,20 @@ import Selector from 'react-native-easy-select'; // Import package
 
 const Example = () => (
   <Selector
-    theme="dropdown"
+    theme="dropdown" // Default: 'simple'
     items={[
       { myLabel: 'English', myValue: 'english' },
       { myLabel: 'French', myValue: 'french' },
     ]}
-    defaultValue="english" // Set default value
-    placeholder="Select a language" // Placeholder for dropdown UI
 
     // Specify key
     valueKey="myValue" // Default: 'value'
     labelKey="myLabel" // Default: 'label'
+
+    defaultValue="english" // Set default value
+    placeholder="Select a language" // Placeholder for dropdown UI
+
+	  loading={false} // Set loading for selector
 
     // Styles
     textOptionStyle={{ color: 'green' }}
@@ -54,6 +57,7 @@ const Example = () => (
     placeholderStyle={{ color: 'red' }}
     optionContainerStyle={{ backgroundColor: 'yellow' }}
     iconStyle={{ tintColor: 'black' }}
+	  loadingStyle={{ marginBottom: 10 }}
 
     // Change dropdown icon
     iconDropdownComponent={() => <AppText>Demo</AppText>}
@@ -76,6 +80,7 @@ export default Example;
 | `labelKey`                     | String              | `'label'`         | Key name to specify label props of object  |
 | `theme`                     | String  = 'simple' or 'dropdown'            | `'simple'`         |  **Required**. Specify the UI for select components. Default is `simple` and dropdown UI is `dropdown`.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
+| `loading`                     | String or Numer           | `false`         | Show `ActivityIndicator` when loading.  |
 | `iconDropdownComponent`                     | Function           | `null`         | Custom icon component to be rendered.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
 | `placeholder`                     | String           | `''`         | Set placeholder for dropdown UI.  |
@@ -85,6 +90,7 @@ export default Example;
 | `placeholderStyle`                     | Object           | `null`         | Style overrides for Text of placeholder.  |
 | `textOptionStyle`                     | Object           | `null`         | Style overrides for Text of each option.  |
 | `iconStyle`                     | Object           | `null`         | Style overrides for icon component.  |
+| `loadingStyle`                     | Object           | `null`         | Style overrides for `ActivityIndicator` component.  |
 
 ## Contribution
 Contribution are always **welcome and recommended**! Here is how:
