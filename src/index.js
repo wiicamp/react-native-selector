@@ -17,9 +17,10 @@ const AppSelect = ({
   theme,
   placeholder,
   defaultValue,
-  loading,
   valueKey,
   labelKey,
+  loading,
+  disabled,
   containerStyle,
   optionContainerStyle,
   placeholderContainerStyle,
@@ -68,18 +69,37 @@ const AppSelect = ({
           && (item[valueKey].toString() === optionSelected.toString());
 
         return (
-          <TouchableWithoutFeedback onPress={onSelectOption(item)} key={item[valueKey]}>
+          <TouchableWithoutFeedback
+            key={item[valueKey]}
+            disabled={disabled}
+            onPress={onSelectOption(item)}
+          >
             <View style={[styles.option, optionContainerStyle]}>
               <View
                 style={[
                   styles.roundCheckbox,
                   isSelected && styles.roundCheckboxActive,
+                  disabled && styles.roundCheckboxDisabled,
                 ]}
               >
-                {isSelected && <View style={styles.roundCheckboxCore} />}
+                {isSelected && (
+                  <View
+                    style={[
+                      styles.roundCheckboxCore,
+                      disabled && styles.roundCheckboxCoreDisable,
+                    ]}
+                  />
+                )}
               </View>
 
-              <Text style={[styles.txtOption, textOptionStyle]}>{item[labelKey]}</Text>
+              <Text style={[
+                styles.txtOption,
+                textOptionStyle,
+                disabled && { color: '#cecece' },
+              ]}
+              >
+                {item[labelKey]}
+              </Text>
             </View>
           </TouchableWithoutFeedback>
         );
@@ -138,6 +158,7 @@ AppSelect.propTypes = {
     PropTypes.number,
   ]),
   loading: PropTypes.bool,
+  disabled: PropTypes.bool,
   containerStyle: PropTypes.instanceOf(Object),
   optionContainerStyle: PropTypes.instanceOf(Object),
   placeholderContainerStyle: PropTypes.instanceOf(Object),
@@ -157,6 +178,7 @@ AppSelect.defaultProps = {
   placeholder: '',
   defaultValue: '',
   loading: false,
+  disabled: false,
   containerStyle: null,
   optionContainerStyle: null,
   placeholderContainerStyle: null,

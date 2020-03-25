@@ -44,11 +44,18 @@ export default StyleSheet.create({
   roundCheckboxActive: {
     borderColor: '#FFB016',
   },
+  roundCheckboxDisabled: {
+    borderColor: '#CECECE',
+  },
+
   roundCheckboxCore: {
     width: 10,
     height: 10,
     borderRadius: 5,
     backgroundColor: '#FFB016',
+  },
+  roundCheckboxCoreDisable: {
+    backgroundColor: '#CECECE',
   },
 
   txtPlaceholder: {

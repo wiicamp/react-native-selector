@@ -50,6 +50,7 @@ const Example = () => (
     placeholder="Select a language" // Placeholder for dropdown UI
 
     loading={false} // Set loading for selector
+    disabled ={false} // Set disable for selector
 
     // Styles
     textOptionStyle={{ color: 'green' }}
@@ -81,6 +82,7 @@ export default Example;
 | `theme`                     | String  = 'simple' or 'dropdown'            | `'simple'`         |  **Required**. Specify the UI for select components. Default is `simple` and dropdown UI is `dropdown`.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
 | `loading`                     | String or Numer           | `false`         | Show `ActivityIndicator` when loading.  |
+| `disabled`                     | String or Numer           | `false`         | Disable all interactions for selector.  |
 | `iconDropdownComponent`                     | Function           | `null`         | Custom icon component to be rendered.  |
 | `defaultValue`                     | String or Numer           | `''`         | Specify the default value of the selector. This value will be compared with the value of `valueKey`.  |
 | `placeholder`                     | String           | `''`         | Set placeholder for dropdown UI.  |
