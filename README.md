@@ -49,7 +49,7 @@ const Example = () => (
     defaultValue="english" // Set default value
     placeholder="Select a language" // Placeholder for dropdown UI
 
-	  loading={false} // Set loading for selector
+    loading={false} // Set loading for selector
 
     // Styles
     textOptionStyle={{ color: 'green' }}
@@ -57,7 +57,7 @@ const Example = () => (
     placeholderStyle={{ color: 'red' }}
     optionContainerStyle={{ backgroundColor: 'yellow' }}
     iconStyle={{ tintColor: 'black' }}
-	  loadingStyle={{ marginBottom: 10 }}
+    loadingStyle={{ marginBottom: 10 }}
 
     // Change dropdown icon
     iconDropdownComponent={() => <AppText>Demo</AppText>}
