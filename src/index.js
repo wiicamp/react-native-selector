@@ -35,7 +35,7 @@ const AppSelect = ({
   }, [defaultValue]);
 
   const objSelected = items.find((item) => (
-    item[valueKey].toString() === optionSelected.toString()
+    item[valueKey] ? item[valueKey].toString() === optionSelected.toString() : null
   ));
 
   const onSelectOption = (item) => () => {
@@ -56,7 +56,8 @@ const AppSelect = ({
   const IconDropdownComponent = (() => iconDropdownComponent)();
 
   const optionsList = items.map((item) => {
-    const isSelected = item[valueKey].toString() === optionSelected.toString();
+    const isSelected = item[valueKey]
+      && (item[valueKey].toString() === optionSelected.toString());
 
     return (
       <TouchableWithoutFeedback onPress={onSelectOption(item)} key={item[valueKey]}>
