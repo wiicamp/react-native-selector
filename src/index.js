@@ -95,7 +95,7 @@ const AppSelect = ({
               <Text style={[
                 styles.txtOption,
                 textOptionStyle,
-                disabled && { color: '#cecece' },
+                disabled && styles.txtDisabled,
               ]}
               >
                 {item[labelKey]}

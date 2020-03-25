@@ -64,6 +64,9 @@ export default StyleSheet.create({
   txtOption: {
     fontSize: 16,
   },
+  txtDisabled: {
+    color: '#CECECE',
+  },
 
   icon: {
     width: 10,
