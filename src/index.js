@@ -90,7 +90,7 @@ const AppSelect = ({
                 <View
                   style={[
                     styles.roundCheckboxCore,
-                    roundCheckboxCore
+                    roundCheckboxCore,
                     disabled && styles.roundCheckboxCoreDisable,
                   ]}
                 />
