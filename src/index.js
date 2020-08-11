@@ -1,16 +1,16 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState, useEffect } from "react";
 import {
   View,
   Text,
   Image,
   TouchableWithoutFeedback,
   ActivityIndicator,
-} from 'react-native';
-import PropTypes from 'prop-types';
+} from "react-native";
+import PropTypes from "prop-types";
 
-import styles from './styles';
+import styles from "./styles";
 
-import iconDropdown from './images/icon-dropdown.png';
+import iconDropdown from "./images/icon-dropdown.png";
 
 const AppSelect = ({
   items,
@@ -26,6 +26,7 @@ const AppSelect = ({
   placeholderContainerStyle,
   placeholderStyle,
   textOptionStyle,
+  roundCheckbox,
   loadingStyle,
   iconStyle,
   iconDropdownComponent,
@@ -38,15 +39,17 @@ const AppSelect = ({
     setOptionSelected(defaultValue);
   }, [defaultValue]);
 
-  const objSelected = items.find((item) => (
-    item[valueKey] ? item[valueKey].toString() === optionSelected.toString() : null
-  ));
+  const objSelected = items.find((item) =>
+    item[valueKey]
+      ? item[valueKey].toString() === optionSelected.toString()
+      : null
+  );
 
   const onSelectOption = (item) => () => {
     onChange(item[valueKey]);
     setOptionSelected(item[valueKey]);
 
-    if (theme === 'dropdown') {
+    if (theme === "dropdown") {
       setShowOptionsBox(false);
     }
   };
@@ -59,54 +62,55 @@ const AppSelect = ({
 
   const IconDropdownComponent = (() => iconDropdownComponent)();
 
-  const optionsList = loading
-    ? (
-      <ActivityIndicator style={loadingStyle} />
-    )
-    : (
-      items.map((item) => {
-        const isSelected = item[valueKey]
-          && (item[valueKey].toString() === optionSelected.toString());
+  const optionsList = loading ? (
+    <ActivityIndicator style={loadingStyle} />
+  ) : (
+    items.map((item) => {
+      const isSelected =
+        item[valueKey] &&
+        item[valueKey].toString() === optionSelected.toString();
 
-        return (
-          <TouchableWithoutFeedback
-            key={item[valueKey]}
-            disabled={disabled}
-            onPress={onSelectOption(item)}
-          >
-            <View style={[styles.option, optionContainerStyle]}>
-              <View
-                style={[
-                  styles.roundCheckbox,
-                  isSelected && styles.roundCheckboxActive,
-                  disabled && styles.roundCheckboxDisabled,
-                ]}
-              >
-                {isSelected && (
-                  <View
-                    style={[
-                      styles.roundCheckboxCore,
-                      disabled && styles.roundCheckboxCoreDisable,
-                    ]}
-                  />
-                )}
-              </View>
+      return (
+        <TouchableWithoutFeedback
+          key={item[valueKey]}
+          disabled={disabled}
+          onPress={onSelectOption(item)}
+        >
+          <View style={[styles.option, optionContainerStyle]}>
+            <View
+              style={[
+                styles.roundCheckbox,
+                roundCheckbox,
+                isSelected && styles.roundCheckboxActive,
+                disabled && styles.roundCheckboxDisabled,
+              ]}
+            >
+              {isSelected && (
+                <View
+                  style={[
+                    styles.roundCheckboxCore,
+                    disabled && styles.roundCheckboxCoreDisable,
+                  ]}
+                />
+              )}
+            </View>
 
-              <Text style={[
+            <Text
+              style={[
                 styles.txtOption,
                 textOptionStyle,
                 disabled && styles.txtDisabled,
               ]}
-              >
-                {item[labelKey]}
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
-        );
-      })
-    );
+            >
+              {item[labelKey]}
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
+      );
+    })
+  );
 
-  if (theme === 'dropdown') {
+  if (theme === "dropdown") {
     comp = (
       <>
         <TouchableWithoutFeedback onPress={onToggleOptionsBox}>
@@ -116,47 +120,32 @@ const AppSelect = ({
             </Text>
 
             <View style={showOptionsBox && styles.rotateIcon}>
-              {
-                iconDropdownComponent ? (
-                  <IconDropdownComponent style={[styles.icon, iconStyle]} />
-                ) : (
-                  <Image source={iconDropdown} style={[styles.icon, iconStyle]} />
-                )
-              }
+              {iconDropdownComponent ? (
+                <IconDropdownComponent style={[styles.icon, iconStyle]} />
+              ) : (
+                <Image source={iconDropdown} style={[styles.icon, iconStyle]} />
+              )}
             </View>
           </View>
         </TouchableWithoutFeedback>
 
-        {
-          showOptionsBox && (
-            <View style={styles.optionsBox}>
-              {optionsList}
-            </View>
-          )
-        }
+        {showOptionsBox && <View style={styles.optionsBox}>{optionsList}</View>}
       </>
     );
   } else {
     comp = optionsList;
   }
 
-  return (
-    <View style={containerStyle}>
-      {comp}
-    </View>
-  );
+  return <View style={containerStyle}>{comp}</View>;
 };
 
 AppSelect.propTypes = {
   items: PropTypes.instanceOf(Array),
-  theme: PropTypes.oneOf(['simple', 'dropdown']),
+  theme: PropTypes.oneOf(["simple", "dropdown"]),
   valueKey: PropTypes.string,
   labelKey: PropTypes.string,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   containerStyle: PropTypes.instanceOf(Object),
@@ -164,6 +153,7 @@ AppSelect.propTypes = {
   placeholderContainerStyle: PropTypes.instanceOf(Object),
   placeholderStyle: PropTypes.instanceOf(Object),
   textOptionStyle: PropTypes.instanceOf(Object),
+  roundCheckbox: PropTypes.instanceOf(Object),
   loadingStyle: PropTypes.instanceOf(Object),
   iconStyle: PropTypes.instanceOf(Object),
   iconDropdownComponent: PropTypes.func,
@@ -172,11 +162,11 @@ AppSelect.propTypes = {
 
 AppSelect.defaultProps = {
   items: [],
-  theme: 'simple',
-  valueKey: 'value',
-  labelKey: 'label',
-  placeholder: '',
-  defaultValue: '',
+  theme: "simple",
+  valueKey: "value",
+  labelKey: "label",
+  placeholder: "",
+  defaultValue: "",
   loading: false,
   disabled: false,
   containerStyle: null,
@@ -186,8 +176,9 @@ AppSelect.defaultProps = {
   textOptionStyle: null,
   loadingStyle: null,
   iconStyle: null,
+  roundCheckbox: null,
   iconDropdownComponent: null,
-  onChange: () => { },
+  onChange: () => {},
 };
 
 export default memo(AppSelect);
