@@ -27,7 +27,7 @@ const AppSelect = ({
   placeholderStyle,
   textOptionStyle,
   roundCheckbox,
-  roundCheckboxActive,
+  roundCheckboxCore,
   loadingStyle,
   iconStyle,
   iconDropdownComponent,
