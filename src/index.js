@@ -155,7 +155,7 @@ AppSelect.propTypes = {
   placeholderStyle: PropTypes.instanceOf(Object),
   textOptionStyle: PropTypes.instanceOf(Object),
   roundCheckbox: PropTypes.instanceOf(Object),
-  roundCheckboxActive: propTypes.instanceOf(Object),
+  roundCheckboxActive: PropTypes.instanceOf(Object),
   loadingStyle: PropTypes.instanceOf(Object),
   iconStyle: PropTypes.instanceOf(Object),
   iconDropdownComponent: PropTypes.func,
