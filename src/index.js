@@ -27,6 +27,7 @@ const AppSelect = ({
   placeholderStyle,
   textOptionStyle,
   roundCheckbox,
+  roundCheckboxActive,
   loadingStyle,
   iconStyle,
   iconDropdownComponent,
@@ -81,7 +82,7 @@ const AppSelect = ({
               style={[
                 styles.roundCheckbox,
                 roundCheckbox,
-                isSelected && styles.roundCheckboxActive,
+                isSelected && styles.roundCheckboxActive && roundCheckboxActive,
                 disabled && styles.roundCheckboxDisabled,
               ]}
             >
@@ -154,6 +155,7 @@ AppSelect.propTypes = {
   placeholderStyle: PropTypes.instanceOf(Object),
   textOptionStyle: PropTypes.instanceOf(Object),
   roundCheckbox: PropTypes.instanceOf(Object),
+  roundCheckboxActive: propTypes.instanceOf(Object),
   loadingStyle: PropTypes.instanceOf(Object),
   iconStyle: PropTypes.instanceOf(Object),
   iconDropdownComponent: PropTypes.func,
@@ -177,6 +179,7 @@ AppSelect.defaultProps = {
   loadingStyle: null,
   iconStyle: null,
   roundCheckbox: null,
+  roundCheckboxActive: null,
   iconDropdownComponent: null,
   onChange: () => {},
 };
