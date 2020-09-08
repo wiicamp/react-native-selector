@@ -1,7 +1,8 @@
 # @wiicamp/react-native-selector
-[![NPM version](https://img.shields.io/npm/v/react-native-easy-select)](https://www.npmjs.com/package/react-native-easy-select)
-[![License](https://img.shields.io/npm/l/react-native-easy-select)](https://github.com/havinhthai/react-native-easy-select/blob/master/LICENSE)
-[![Update status](https://img.shields.io/david/havinhthai/react-native-easy-select)](https://www.npmjs.com/package/react-native-easy-select)
+[![NPM version](https://img.shields.io/npm/v/react-native-easy-select)](https://www.npmjs.com/package/@wiicamp/react-native-selector)
+[![License](https://img.shields.io/github/license/wiicamp/react-native-selector)](https://github.com/wiicamp/react-native-easy-select/blob/master/LICENSE)
+[![Size](https://img.shields.io/github/repo-size/wiicamp/react-native-selector)](https://www.npmjs.com/package/@wiicamp/react-native-selector)
+[![Update status](https://img.shields.io/david/wiicamp/react-native-selector)](https://www.npmjs.com/package/@wiicamp/react-native-selector)
 
 A flexible select component for React Native.
 
