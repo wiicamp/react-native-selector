@@ -23,16 +23,16 @@ A flexible select component for React Native.
 
 ## Install
 ```sh
-yarn add @wiicamp/react-native-easy-select
+yarn add @wiicamp/react-native-selector
 ```
 or
 ```sh
-npm i --save @wiicamp/react-native-easy-select
+npm i --save @wiicamp/react-native-selector
 ```
 
 ## Usage
 ```javascript
-import Selector from 'react-native-easy-select'; // Import package
+import Selector from '@wiicamp/react-native-selector'; // Import package
 
 const Example = () => (
   <Selector
@@ -98,12 +98,12 @@ export default Example;
 Contribution are always **welcome and recommended**! Here is how:
 
 - Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- Clone to your machine ```git clone https://github.com/YOUR_USERNAME/react-native-easy-select.git```
+- Clone to your machine ```git clone https://github.com/YOUR_USERNAME/react-native-selector.git```
 - Make your changes
 - Create a pull request
 
 
 ## License
-`@wiicamp/react-native-easy-select` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
+`@wiicamp/react-native-selector` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
   
 Any question or support will welcome.
