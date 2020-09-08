@@ -1,6 +1,6 @@
 {
-  "name": "react-native-easy-select",
-  "version": "1.4.2",
+  "name": "@wiicamp/react-native-easy-select",
+  "version": "1.4.3",
   "description": "A flexible select component for React Native.",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/havinhthai/react-native-easy-select.git"
+    "url": "git+https://github.com/wiicamp/react-native-easy-select.git"
   },
   "keywords": [
     "select",
@@ -18,21 +18,21 @@
     "material",
     "dropdown"
   ],
-  "author": "TuiDev <vinhthai997@gmail.com>",
+  "author": "Thai Ha <vinhthai997@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/havinhthai/react-native-easy-select/issues"
+    "url": "https://github.com/wiicamp/react-native-easy-select/issues"
   },
-  "homepage": "https://github.com/havinhthai/react-native-easy-select#readme",
+  "homepage": "https://github.com/wiicamp/react-native-easy-select#readme",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0"
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6"
   }
 }

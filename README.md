@@ -23,11 +23,11 @@ A flexible select component for React Native.
 
 ## Install
 ```sh
-yarn add react-native-easy-select
+yarn add @wiicamp/react-native-easy-select
 ```
 or
 ```sh
-npm i --save react-native-easy-select
+npm i --save @wiicamp/react-native-easy-select
 ```
 
 ## Usage
@@ -104,6 +104,6 @@ Contribution are always **welcome and recommended**! Here is how:
 
 
 ## License
-`react-native-easy-select` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
+`@wiicamp/react-native-easy-select` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
   
 Any question or support will welcome.
